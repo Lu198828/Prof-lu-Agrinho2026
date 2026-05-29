@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agrinho 2026 - Inovação e Tecnologia no Agro</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background: linear-gradient(to bottom, #e8ffe8, #ffffff);
+      color:#1d3b1d;
+      overflow-x:hidden;
+    }
+
+    header{
+      background: linear-gradient(135deg, #0f7a35, #49c16d);
+      color:white;
+      text-align:center;
+      padding:60px 20px;
+      box-shadow:0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    header h1{
+      font-size:3rem;
+      margin-bottom:15px;
+      animation: aparecer 2s ease;
+    }
+
+    header p{
+      font-size:1.2rem;
+      max-width:800px;
+      margin:auto;
+      line-height:1.6;
+    }
+
+    nav{
+      background:#145c2c;
+      padding:15px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      text-align:center;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin:0 15px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#a8ffb8;
+    }
+
+    section{
+      padding:60px 10%;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      gap:25px;
+      margin-top:30px;
+    }
+
+    .card{
+      background:white;
+      border-radius:20px;
+      padding:25px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:0.4s;
+      border-left:8px solid #32a852;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      background:#f4fff4;
+    }
+
+    .card h3{
+      color:#0f7a35;
+      margin-bottom:15px;
+    }
+
+    .destaque{
+      background:linear-gradient(135deg, #32a852, #7df59f);
+      color:white;
+      border-radius:25px;
+      padding:40px;
+      text-align:center;
+      margin-top:40px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    .imagem-agro{
+      width:100%;
+      border-radius:20px;
+      margin-top:30px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .curtidas{
+      text-align:center;
+      margin-top:40px;
+    }
+
+    .btn-curtir{
+      background:#0f7a35;
+      color:white;
+      border:none;
+      padding:15px 30px;
+      font-size:1.1rem;
+      border-radius:50px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .btn-curtir:hover{
+      background:#32a852;
+      transform:scale(1.05);
+    }
+
+    #contador{
+      font-size:2rem;
+      margin-top:20px;
+      color:#0f7a35;
+      font-weight:bold;
+    }
+
+    footer{
+      background:#145c2c;
+      color:white;
+      text-align:center;
+      padding:30px;
+      margin-top:50px;
+    }
+
+    .autor{
+      margin-top:10px;
+      font-size:1rem;
+      color:#c9ffd7;
+    }
+
+    @keyframes aparecer{
+      from{
+        opacity:0;
+        transform:translateY(-30px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .emoji{
+      position:fixed;
+      font-size:30px;
+      animation: subir 2s linear forwards;
+      pointer-events:none;
+    }
+
+    @keyframes subir{
+      0%{
+        opacity:1;
+        transform:translateY(0);
+      }
+      100%{
+        opacity:0;
+        transform:translateY(-200px);
+      }
+    }
+
+    @media(max-width:768px){
+      header h1{
+        font-size:2.2rem;
+      }
+
+      section{
+        padding:40px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🌱 Agrinho 2026</h1>
+    <p>
+      Inovação, tecnologia e juventude: o futuro do agro forte e sustentável.
+      A união entre conhecimento, natureza e tecnologia transforma o campo e cria um futuro melhor para todos.
+    </p>
+  </header>
+
+  <nav>
+    <a href="#tecnologia">Tecnologia</a>
+    <a href="#juventude">Juventude</a>
+    <a href="#sustentabilidade">Sustentabilidade</a>
+    <a href="#curtidas">Curtidas</a>
+  </nav>
+
+  <section id="tecnologia">
+    <h2>🚜 Tecnologia no Campo</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>🌾 Agricultura Inteligente</h3>
+        <p>
+          Sensores, drones e máquinas modernas ajudam a produzir mais alimentos com qualidade e menos desperdício.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>💡 Inovação Digital</h3>
+        <p>
+          Aplicativos e inteligência artificial auxiliam produtores rurais no monitoramento das plantações.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🌍 Futuro Sustentável</h3>
+        <p>
+          A tecnologia contribui para preservar o meio ambiente e fortalecer a produção agrícola sustentável.
+        </p>
+      </div>
+    </div>
+
+    <div class="destaque">
+      <h2>🌱 O Agro do Futuro</h2>
+      <p>
+        Jovens conectados com inovação e sustentabilidade constroem um campo mais moderno, produtivo e consciente.
+      </p>
+    </div>
+  </section>
+
+  <section id="juventude">
+    <h2>👩‍🎓 Jovens Transformando o Agro</h2>
+
+    <p style="margin-top:20px; line-height:1.8;">
+      A juventude tem papel fundamental no desenvolvimento do agronegócio sustentável.
+      Com criatividade, estudo e tecnologia, os jovens ajudam a criar soluções modernas para o campo,
+      garantindo alimento, preservação ambiental e desenvolvimento econômico.
+    </p>
+
+    <img 
+      class="imagem-agro"
+      src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80"
+      alt="Agricultura sustentável"
+    >
+  </section>
+
+  <section id="sustentabilidade">
+    <h2>♻️ Sustentabilidade e Consciência</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>💧 Economia de Água</h3>
+        <p>
+          Sistemas inteligentes de irrigação ajudam a reduzir o desperdício de água.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🌳 Preservação Ambiental</h3>
+        <p>
+          Produzir alimentos respeitando a natureza é essencial para o futuro do planeta.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🔋 Energia Renovável</h3>
+        <p>
+          O uso de energia solar e tecnologias limpas fortalece o agro sustentável.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="curtidas" id="curtidas">
+    <h2>💚 Curta este Projeto!</h2>
+
+    <button class="btn-curtir" onclick="curtir()">
+      👍 Curtir Projeto
+    </button>
+
+    <div id="contador">0 Curtidas 💚</div>
+  </section>
+
+  <footer>
+    <h3>Projeto Agrinho 2026</h3>
+    <p>
+      Tema: Inovação, Tecnologia e Jovem — O Futuro do Agro Forte e Sustentável
+    </p>
+
+    <div class="autor">
+      Autor(a): Professora Luciana Pereira
+    </div>
+  </footer>
+
+  <script>
+    let curtidas = 0;
+
+    function curtir(){
+      curtidas++;
+      document.getElementById("contador").innerHTML =
+        curtidas + " Curtidas 💚";
+
+      criarEmoji();
+    }
+
+    function criarEmoji(){
+      const emojis = ["💚","🌱","🚜","✨","🌾","👍"];
+      const emoji = document.createElement("div");
+
+      emoji.classList.add("emoji");
+      emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+
+      emoji.style.left = Math.random() * window.innerWidth + "px";
+      emoji.style.top = (window.innerHeight - 100) + "px";
+
+      document.body.appendChild(emoji);
+
+      setTimeout(() => {
+        emoji.remove();
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
