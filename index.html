@@ -1,339 +1,411 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Agrinho 2026 - Inovação e Tecnologia no Agro</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: Arial, Helvetica, sans-serif;
+<title>Terra do Amanhã | Agrinho 2026</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f7fbff;
+    color:#1e293b;
+}
+
+/* MENU */
+
+header{
+    background:linear-gradient(135deg,#0f172a,#1e40af,#3b82f6);
+    color:white;
+    min-height:100vh;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 8%;
+}
+
+.logo{
+    font-size:1.8rem;
+    font-weight:700;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#93c5fd;
+}
+
+/* HERO */
+
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:60px 8%;
+    min-height:80vh;
+}
+
+.hero-text{
+    max-width:650px;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:4.5rem;
+    line-height:1.1;
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.btn{
+    background:white;
+    color:#2563eb;
+    border:none;
+    padding:16px 35px;
+    border-radius:50px;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+}
+
+.hero-icon{
+    font-size:12rem;
+    animation:float 4s infinite ease-in-out;
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-20px);
     }
+}
 
-    body{
-      background: linear-gradient(to bottom, #e8ffe8, #ffffff);
-      color:#1d3b1d;
-      overflow-x:hidden;
-    }
+/* SOBRE */
 
-    header{
-      background: linear-gradient(135deg, #0f7a35, #49c16d);
-      color:white;
-      text-align:center;
-      padding:60px 20px;
-      box-shadow:0 4px 15px rgba(0,0,0,0.2);
-    }
+.section{
+    padding:100px 8%;
+}
 
-    header h1{
-      font-size:3rem;
-      margin-bottom:15px;
-      animation: aparecer 2s ease;
-    }
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
 
-    header p{
-      font-size:1.2rem;
-      max-width:800px;
-      margin:auto;
-      line-height:1.6;
-    }
+.section-title h2{
+    font-family:'Playfair Display',serif;
+    font-size:3rem;
+    color:#1e40af;
+}
 
-    nav{
-      background:#145c2c;
-      padding:15px;
-      position:sticky;
-      top:0;
-      z-index:1000;
-      text-align:center;
-    }
+.section-title p{
+    margin-top:10px;
+    color:#64748b;
+}
 
-    nav a{
-      color:white;
-      text-decoration:none;
-      margin:0 15px;
-      font-weight:bold;
-      transition:0.3s;
-    }
+/* CARDS */
 
-    nav a:hover{
-      color:#a8ffb8;
-    }
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
 
-    section{
-      padding:60px 10%;
-    }
+.card{
+    background:white;
+    padding:35px;
+    border-radius:25px;
 
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-      gap:25px;
-      margin-top:30px;
-    }
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
 
-    .card{
-      background:white;
-      border-radius:20px;
-      padding:25px;
-      box-shadow:0 5px 15px rgba(0,0,0,0.1);
-      transition:0.4s;
-      border-left:8px solid #32a852;
-    }
+    transition:.4s;
+}
 
-    .card:hover{
-      transform:translateY(-10px);
-      background:#f4fff4;
-    }
+.card:hover{
+    transform:translateY(-10px);
+}
 
-    .card h3{
-      color:#0f7a35;
-      margin-bottom:15px;
-    }
+.card h3{
+    color:#2563eb;
+    margin-bottom:15px;
+}
 
-    .destaque{
-      background:linear-gradient(135deg, #32a852, #7df59f);
-      color:white;
-      border-radius:25px;
-      padding:40px;
-      text-align:center;
-      margin-top:40px;
-      box-shadow:0 5px 20px rgba(0,0,0,0.2);
-    }
+.card p{
+    line-height:1.8;
+}
 
-    .imagem-agro{
-      width:100%;
-      border-radius:20px;
-      margin-top:30px;
-      box-shadow:0 5px 15px rgba(0,0,0,0.2);
-    }
+/* DESTAQUE */
 
-    .curtidas{
-      text-align:center;
-      margin-top:40px;
-    }
+.highlight{
+    background:linear-gradient(135deg,#2563eb,#60a5fa);
+    color:white;
+    text-align:center;
+    padding:100px 10%;
+}
 
-    .btn-curtir{
-      background:#0f7a35;
-      color:white;
-      border:none;
-      padding:15px 30px;
-      font-size:1.1rem;
-      border-radius:50px;
-      cursor:pointer;
-      transition:0.3s;
-    }
+.highlight h2{
+    font-family:'Playfair Display',serif;
+    font-size:3rem;
+    margin-bottom:20px;
+}
 
-    .btn-curtir:hover{
-      background:#32a852;
-      transform:scale(1.05);
-    }
+.highlight p{
+    max-width:800px;
+    margin:auto;
+    font-size:1.1rem;
+    line-height:1.9;
+}
 
-    #contador{
-      font-size:2rem;
-      margin-top:20px;
-      color:#0f7a35;
-      font-weight:bold;
-    }
+/* FOOTER */
 
-    footer{
-      background:#145c2c;
-      color:white;
-      text-align:center;
-      padding:30px;
-      margin-top:50px;
-    }
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:35px;
+}
 
-    .autor{
-      margin-top:10px;
-      font-size:1rem;
-      color:#c9ffd7;
-    }
+/* ANIMAÇÃO */
 
-    @keyframes aparecer{
-      from{
-        opacity:0;
-        transform:translateY(-30px);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
-    }
+.hidden{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
 
-    .emoji{
-      position:fixed;
-      font-size:30px;
-      animation: subir 2s linear forwards;
-      pointer-events:none;
-    }
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
 
-    @keyframes subir{
-      0%{
-        opacity:1;
-        transform:translateY(0);
-      }
-      100%{
-        opacity:0;
-        transform:translateY(-200px);
-      }
-    }
+/* RESPONSIVO */
 
-    @media(max-width:768px){
-      header h1{
-        font-size:2.2rem;
-      }
+@media(max-width:900px){
 
-      section{
-        padding:40px 5%;
-      }
-    }
-  </style>
+.hero{
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:3rem;
+}
+
+.hero-icon{
+    margin-top:40px;
+    font-size:8rem;
+}
+
+nav{
+    flex-direction:column;
+    gap:20px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+}
+
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>🌱 Agrinho 2026</h1>
-    <p>
-      Inovação, tecnologia e juventude: o futuro do agro forte e sustentável.
-      A união entre conhecimento, natureza e tecnologia transforma o campo e cria um futuro melhor para todos.
-    </p>
-  </header>
+<header>
 
-  <nav>
-    <a href="#tecnologia">Tecnologia</a>
-    <a href="#juventude">Juventude</a>
-    <a href="#sustentabilidade">Sustentabilidade</a>
-    <a href="#curtidas">Curtidas</a>
-  </nav>
+<nav>
 
-  <section id="tecnologia">
-    <h2>🚜 Tecnologia no Campo</h2>
+<div class="logo">🌎 Terra do Amanhã</div>
 
-    <div class="cards">
-      <div class="card">
-        <h3>🌾 Agricultura Inteligente</h3>
-        <p>
-          Sensores, drones e máquinas modernas ajudam a produzir mais alimentos com qualidade e menos desperdício.
-        </p>
-      </div>
+<ul>
+<li><a href="#sobre">Sobre</a></li>
+<li><a href="#tecnologia">Tecnologia</a></li>
+<li><a href="#sustentabilidade">Sustentabilidade</a></li>
+<li><a href="#contato">Contato</a></li>
+</ul>
 
-      <div class="card">
-        <h3>💡 Inovação Digital</h3>
-        <p>
-          Aplicativos e inteligência artificial auxiliam produtores rurais no monitoramento das plantações.
-        </p>
-      </div>
+</nav>
 
-      <div class="card">
-        <h3>🌍 Futuro Sustentável</h3>
-        <p>
-          A tecnologia contribui para preservar o meio ambiente e fortalecer a produção agrícola sustentável.
-        </p>
-      </div>
-    </div>
+<div class="hero">
 
-    <div class="destaque">
-      <h2>🌱 O Agro do Futuro</h2>
-      <p>
-        Jovens conectados com inovação e sustentabilidade constroem um campo mais moderno, produtivo e consciente.
-      </p>
-    </div>
-  </section>
+<div class="hero-text">
 
-  <section id="juventude">
-    <h2>👩‍🎓 Jovens Transformando o Agro</h2>
+<h1>
+O Futuro da Agricultura
+Começa Hoje
+</h1>
 
-    <p style="margin-top:20px; line-height:1.8;">
-      A juventude tem papel fundamental no desenvolvimento do agronegócio sustentável.
-      Com criatividade, estudo e tecnologia, os jovens ajudam a criar soluções modernas para o campo,
-      garantindo alimento, preservação ambiental e desenvolvimento econômico.
-    </p>
+<p>
+A tecnologia está transformando o campo através da inteligência artificial,
+automação, drones e agricultura de precisão. Conheça um futuro mais sustentável,
+eficiente e acessível para todos.
+</p>
 
-    <img 
-      class="imagem-agro"
-      src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80"
-      alt="Agricultura sustentável"
-    >
-  </section>
+<button class="btn" onclick="mensagem()">
+Explorar Projeto
+</button>
 
-  <section id="sustentabilidade">
-    <h2>♻️ Sustentabilidade e Consciência</h2>
+</div>
 
-    <div class="cards">
-      <div class="card">
-        <h3>💧 Economia de Água</h3>
-        <p>
-          Sistemas inteligentes de irrigação ajudam a reduzir o desperdício de água.
-        </p>
-      </div>
+<div class="hero-icon">
+🌱
+</div>
 
-      <div class="card">
-        <h3>🌳 Preservação Ambiental</h3>
-        <p>
-          Produzir alimentos respeitando a natureza é essencial para o futuro do planeta.
-        </p>
-      </div>
+</div>
 
-      <div class="card">
-        <h3>🔋 Energia Renovável</h3>
-        <p>
-          O uso de energia solar e tecnologias limpas fortalece o agro sustentável.
-        </p>
-      </div>
-    </div>
-  </section>
+</header>
 
-  <section class="curtidas" id="curtidas">
-    <h2>💚 Curta este Projeto!</h2>
+<section class="section hidden" id="sobre">
 
-    <button class="btn-curtir" onclick="curtir()">
-      👍 Curtir Projeto
-    </button>
+<div class="section-title">
+<h2>Acessibilidade Digital</h2>
+<p>Tecnologia para todos.</p>
+</div>
 
-    <div id="contador">0 Curtidas 💚</div>
-  </section>
+<div class="cards">
 
-  <footer>
-    <h3>Projeto Agrinho 2026</h3>
-    <p>
-      Tema: Inovação, Tecnologia e Jovem — O Futuro do Agro Forte e Sustentável
-    </p>
+<div class="card">
+<h3>♿ Inclusão</h3>
+<p>
+Recursos que permitem que todas as pessoas tenham acesso à informação
+independentemente de suas limitações.
+</p>
+</div>
 
-    <div class="autor">
-      Autor(a): Professora Luciana Pereira
-    </div>
-  </footer>
+<div class="card">
+<h3>🔊 Leitura por Voz</h3>
+<p>
+Sistemas de síntese de voz tornam os conteúdos mais acessíveis para usuários
+com deficiência visual.
+</p>
+</div>
 
-  <script>
-    let curtidas = 0;
+<div class="card">
+<h3>🌙 Alto Contraste</h3>
+<p>
+Interfaces modernas permitem diferentes modos de visualização para melhorar
+a experiência do usuário.
+</p>
+</div>
 
-    function curtir(){
-      curtidas++;
-      document.getElementById("contador").innerHTML =
-        curtidas + " Curtidas 💚";
+</div>
 
-      criarEmoji();
-    }
+</section>
 
-    function criarEmoji(){
-      const emojis = ["💚","🌱","🚜","✨","🌾","👍"];
-      const emoji = document.createElement("div");
+<section class="section hidden" id="tecnologia">
 
-      emoji.classList.add("emoji");
-      emoji.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+<div class="section-title">
+<h2>Tecnologia no Campo</h2>
+<p>Inovação para produzir mais e preservar melhor.</p>
+</div>
 
-      emoji.style.left = Math.random() * window.innerWidth + "px";
-      emoji.style.top = (window.innerHeight - 100) + "px";
+<div class="cards">
 
-      document.body.appendChild(emoji);
+<div class="card">
+<h3>🤖 Inteligência Artificial</h3>
+<p>
+Análise de dados para prever colheitas e otimizar recursos.
+</p>
+</div>
 
-      setTimeout(() => {
-        emoji.remove();
-      }, 2000);
-    }
-  </script>
+<div class="card">
+<h3>🚁 Drones</h3>
+<p>
+Monitoramento das plantações com rapidez e precisão.
+</p>
+</div>
+
+<div class="card">
+<h3>📡 Sensores</h3>
+<p>
+Coleta de informações sobre solo, clima e irrigação em tempo real.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="highlight hidden" id="sustentabilidade">
+
+<h2>🌿 Sustentabilidade para as Próximas Gerações</h2>
+
+<p>
+O uso consciente da tecnologia permite aumentar a produtividade agrícola,
+reduzir desperdícios e preservar os recursos naturais, garantindo qualidade
+de vida para as futuras gerações.
+</p>
+
+</section>
+
+<footer id="contato">
+
+<h3>Projeto Agrinho 2026</h3>
+
+<p>
+Terra do Amanhã • Tecnologia, Inclusão e Sustentabilidade
+</p>
+
+</footer>
+
+<script>
+
+function mensagem(){
+    alert("🌱 Bem-vindo ao projeto Terra do Amanhã!");
+}
+
+const elementos = document.querySelectorAll('.hidden');
+
+const observador = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+elementos.forEach((el)=>{
+    observador.observe(el);
+});
+
+</script>
 
 </body>
 </html>
